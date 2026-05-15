@@ -1,0 +1,11 @@
+cool-dashboard-ui has been deployed.
+
+To check the deployment status:
+  kubectl get pods -n cool-dashboard-ui -l app.kubernetes.io/name=cool-dashboard-ui
+
+To access the service within the cluster:
+  http://{{ include "cool-dashboard-ui.fullname" . }}.cool-dashboard-ui.svc.cluster.local:{{ .Values.service.port }}
+
+To port-forward locally:
+  kubectl port-forward -n cool-dashboard-ui svc/{{ include "cool-dashboard-ui.fullname" . }} 8080:{{ .Values.service.port }}
+  Then open http://localhost:8080

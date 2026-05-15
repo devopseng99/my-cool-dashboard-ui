@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import StatsCards from '../components/dashboard/StatsCards';
+import Charts from '../components/dashboard/Charts';
+import ResourceGauge from '../components/dashboard/ResourceGauge';
+---
+<Layout title="Dashboard">
+  <div class="space-y-8">
+    <StatsCards client:load />
+    <ResourceGauge client:load />
+    <Charts client:load />
+  </div>
+</Layout>
