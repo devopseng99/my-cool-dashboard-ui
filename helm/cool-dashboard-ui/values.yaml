@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: cool-dashboard-ui
+  repository: docker.io/library/cool-dashboard-ui
   tag: rev-1
   pullPolicy: Never
 
@@ -16,10 +16,10 @@ nodeSelector:
 resources:
   limits:
     memory: 128Mi
-    cpu: 200m
+    cpu: 100m
   requests:
-    memory: 64Mi
-    cpu: 50m
+    memory: 32Mi
+    cpu: 1m
 
 env:
   API_BACKEND_URL: "http://cool-dashboard.cool-dashboard.svc.cluster.local:80"
